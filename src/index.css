@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import 'katex/dist/katex.min.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* NEXUS LAB — scientific dark theme */
+    --background: 225 49% 8%;            /* #0B1020 */
+    --foreground: 222 47% 97%;           /* #F3F6FC */
+    --card: 221 39% 11%;                 /* #111827 */
+    --card-foreground: 222 47% 97%;
+    --popover: 221 39% 11%;
+    --popover-foreground: 222 47% 97%;
+    --primary: 199 93% 60%;              /* #38BDF8 */
+    --primary-foreground: 225 49% 8%;
+    --secondary: 222 38% 15%;            /* #172033 */
+    --secondary-foreground: 222 47% 97%;
+    --muted: 222 38% 15%;
+    --muted-foreground: 219 22% 72%;     /* #A8B3C7 */
+    --accent: 231 74% 77%;               /* #818CF8 */
+    --accent-foreground: 225 49% 8%;
+    --destructive: 2 76% 65%;            /* #F87171 */
+    --destructive-foreground: 225 49% 8%;
+    --success: 158 54% 52%;              /* #34D399 */
+    --warning: 43 96% 56%;               /* #FBBF24 */
+    --border: 220 26% 20%;
+    --input: 220 26% 24%;
+    --ring: 199 93% 60%;
+    --radius: 0.5rem;
+    --sidebar-background: 225 49% 9%;
+    --sidebar-foreground: 222 47% 97%;
+    --sidebar-primary: 199 93% 60%;
+    --sidebar-primary-foreground: 225 49% 8%;
+    --sidebar-accent: 222 38% 15%;
+    --sidebar-accent-foreground: 222 47% 97%;
+    --sidebar-border: 220 26% 20%;
+    --sidebar-ring: 199 93% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    color-scheme: dark;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .font-mono, code, kbd, pre {
+    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  ::selection {
+    background: hsl(199 93% 60% / 0.28);
+  }
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: hsl(220 26% 24%);
+    border-radius: 6px;
+    border: 2px solid hsl(225 49% 8%);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(220 22% 32%);
+  }
+}
+
+@layer components {
+  .surface-elevated {
+    background: hsl(222 38% 15% / 0.6);
+  }
+  .readout {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.01em;
+  }
+  .panel-title {
+    @apply text-[11px] font-semibold uppercase tracking-[0.14em] text-muted-foreground;
+  }
+  .reading-surface {
+    background: #f7f9fc;
+    color: #172033;
+  }
+  .katex-display {
+    margin: 0.75rem 0;
+  }
+  .grid-lines {
+    background-image:
+      linear-gradient(hsl(199 93% 60% / 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(199 93% 60% / 0.04) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
